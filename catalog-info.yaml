@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: aysgo9y2e-python-gitops
+  description: This is GitOps manifest for aysgo9y2e-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=aysgo9y2e-python
+    backstage.io/kubernetes-id: aysgo9y2e-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: aysgo9y2e-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:aysgo9y2e-python
